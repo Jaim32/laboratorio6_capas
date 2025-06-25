@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: demo-keycloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:3030/realms/Labo5
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/Labo5_BD
+    username: admin
+    password: admin123
+
+keycloak:
+  server-url: http://localhost:3030
+  realm: Labo5
+  client-id: backend-client
+  client-secret: JGo47rTdoinDHvShQsXxcwJPawM1BaJh
